@@ -5,7 +5,7 @@ desc: |
   轻量级上下文用量监控插件。只读 data_v4.db 中指定会话的 user_id/token_usage，支持阈值预警、私聊/群聊通知绑定和可选的新鲜度过滤。
   不读取聊天正文，不修改主数据库，不自动整理日记或笔记。
 version: 0.2.0
-author: Jojodqmmx
+鱼鱼: Jojodqmmx
 repo: https://github.com/jojodqmmx/astrbot_plugin_context_guard
 astrbot_version: ">=4.13.0"
 tags:
