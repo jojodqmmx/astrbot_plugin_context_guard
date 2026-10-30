@@ -1,0 +1,14 @@
+name: astrbot_plugin_context_guard
+display_name: 上下文哨兵
+short_desc: 只读监测 AstrBot 会话 token 用量，达到阈值时发送提醒。
+desc: |
+  轻量级上下文用量监控插件。只读 data_v4.db 中指定会话的 user_id/token_usage，支持阈值预警、私聊/群聊通知绑定和可选的新鲜度过滤。
+  不读取聊天正文，不修改主数据库，不自动整理日记或笔记。
+version: 0.2.0
+author: Jojodqmmx
+repo: https://github.com/jojodqmmx/astrbot_plugin_context_guard
+astrbot_version: ">=4.13.0"
+tags:
+  - 上下文监控
+  - 数据库
+  - 提醒

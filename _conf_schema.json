@@ -1,0 +1,66 @@
+{
+  "enabled": {
+    "description": "启用后台监测",
+    "type": "bool",
+    "default": true
+  },
+  "context_window_tokens": {
+    "description": "上下文窗口上限（tokens）",
+    "type": "int",
+    "hint": "请按你当前模型的上下文窗口填写。1000000 仅作为初始示例，不保证适用于所有模型。",
+    "default": 1000000
+  },
+  "threshold_percent": {
+    "description": "预警百分比",
+    "type": "int",
+    "hint": "建议从 80% 开始；具体应结合模型窗口与压缩机制调整。",
+    "default": 80
+  },
+  "reset_percent": {
+    "description": "重新武装百分比",
+    "type": "int",
+    "hint": "用量降到该比例或更低后，下一次越过预警线才会再次提醒。",
+    "default": 75
+  },
+  "poll_interval_seconds": {
+    "description": "监测间隔（秒）",
+    "type": "int",
+    "hint": "默认 60 秒；最小 15 秒。",
+    "default": 60
+  },
+  "freshness_enabled": {
+    "description": "是否启用更新时间过滤",
+    "type": "bool",
+    "hint": "默认关闭。只有确认更新时间列会随 token_usage 同步刷新时，才建议开启。",
+    "default": false
+  },
+  "freshness_seconds": {
+    "description": "数据最大允许年龄（秒）",
+    "type": "int",
+    "hint": "仅在 freshness_enabled 开启时生效。默认 600 秒（10 分钟），请按实际刷新周期调整。",
+    "default": 600
+  },
+  "friend_user_id": {
+    "description": "需要监控的私聊数据库 user_id",
+    "type": "string",
+    "hint": "先在管理员私聊发送 /记忆监控 会话列表，再复制对应 user_id 到这里。",
+    "default": ""
+  },
+  "group_user_id": {
+    "description": "需要监控的群聊数据库 user_id",
+    "type": "string",
+    "hint": "先在管理员私聊发送 /记忆监控 会话列表，再复制对应 user_id 到这里。",
+    "default": ""
+  },
+  "table_name": {
+    "description": "数据库表名（可留空自动识别）",
+    "type": "string",
+    "default": ""
+  },
+  "updated_at_column": {
+    "description": "更新时间列名（可留空自动识别）",
+    "type": "string",
+    "hint": "例如 updated_at。请确认该字段确实随 token_usage 刷新；不确定时保持 freshness_enabled 关闭。",
+    "default": ""
+  }
+}
